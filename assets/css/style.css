@@ -51,7 +51,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   padding:14px 22px;border-radius:0 0 8px 0;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
 .skip:focus{left:0}
 ::selection{background:var(--mocha);color:var(--paper)}
-.no-scroll{overflow:hidden!important}
+/* iOS Safari ignores body{overflow:hidden}; position:fixed is the reliable lock.
+   JS stores the scroll offset in `top` and restores it on unlock. */
+.no-scroll{overflow:hidden!important;position:fixed;left:0;right:0;width:100%}
 
 /* ---------- Custom cursor ---------- */
 .cursor,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:normal;will-change:transform}
@@ -106,8 +108,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 /* mobile overlay menu */
 .mobile-menu{position:fixed;inset:0;z-index:790;background:var(--ink);color:var(--paper);
-  display:flex;flex-direction:column;justify-content:center;padding:0 30px;clip-path:inset(0 0 100% 0);
-  transition:clip-path .8s var(--ease)}
+  display:flex;flex-direction:column;justify-content:safe center;padding:0 30px;clip-path:inset(0 0 100% 0);
+  transition:clip-path .8s var(--ease);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .menu-open .mobile-menu{clip-path:inset(0 0 0 0)}
 .mobile-menu a{font-family:var(--f-display);font-weight:300;font-size:clamp(38px,11vw,80px);line-height:1.05;
   color:var(--paper);opacity:.35;letter-spacing:.01em;padding:6px 0;transition:opacity .4s,color .4s}
@@ -342,6 +345,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .mappin .dot{width:14px;height:14px;border-radius:50%;background:var(--mocha);margin:0 auto;box-shadow:0 0 0 0 rgba(180,136,94,.5);animation:pin 2.4s infinite}
 @keyframes pin{0%{box-shadow:0 0 0 0 rgba(180,136,94,.5)}70%,100%{box-shadow:0 0 0 26px rgba(180,136,94,0)}}
 .mappin .lbl{margin-top:12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);background:rgba(20,17,13,.7);padding:8px 14px;border-radius:100px;backdrop-filter:blur(4px);white-space:nowrap}
+/* narrow screens: the pill was overflowing the map. Give the pin a width that
+   always keeps it inside (right edge = 62% + w/2 <= 100% - 8px  ->  w <= 76% - 16px)
+   and let the label wrap instead of being clipped. */
+@media(max-width:600px){
+  .mappin{width:calc(76% - 16px)}
+  .mappin .lbl{white-space:normal;max-width:100%;line-height:1.6}
+}
 
 /* ---------- COLLABORATIONS ---------- */
 .collab__head .eyebrow{justify-content:center;margin-bottom:20px}
@@ -426,7 +436,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .btn-mag:hover .arw{transform:translateX(6px)}
 
 /* ---------- MODALS ---------- */
-.modal{position:fixed;inset:0;z-index:9500;display:none}
+.modal{position:fixed;inset:0;z-index:9500;display:none;overscroll-behavior:contain}
 .modal.on{display:block}
 .modal__scrim{position:absolute;inset:0;background:rgba(18,15,11,.55);backdrop-filter:blur(6px);opacity:0;transition:opacity .5s}
 .modal.on .modal__scrim{opacity:1}
@@ -491,9 +501,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .modal__media{max-height:38vh}
   .modal--team .modal__media{max-height:46vh}
 }
+/* short viewports (landscape phones): menu scrolls instead of clipping its last links */
+@media(max-height:560px){
+  .mobile-menu{padding-top:calc(96px + env(safe-area-inset-top,0px));
+    padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
+  .mobile-menu__foot{margin-top:36px}
+}
 @media(max-height:520px){
   .modal__media,.modal--team .modal__media{max-height:34vh}
   .modal--nomedia .modal__body{padding-top:78px}
+}
+/* touch devices: 44px minimum hit-area (invisible — no visual change) */
+@media(pointer:coarse){
+  .filters button,.nav__cta{position:relative}
+  .filters button::after,.nav__cta::after{content:"";position:absolute;left:0;right:0;top:50%;
+    transform:translateY(-50%);height:44px}
+  .footer__col a{padding:11px 0}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;transition-duration:.001ms!important}

@@ -212,3 +212,33 @@ host's public directory (`public_html`, `www`, …) and it just works.
   creative.architecture000@gmail.com.
 
 All three are already coded and working. You're only choosing which one to switch on.
+
+---
+
+## Responsive QA pass — what changed (July 2026)
+
+The site was tested at 320, 375, 390, 430, 599, 768, 820, 1024, 1280, 1440 and 1920px,
+in portrait and landscape, on both touch and mouse. **The design was not touched** —
+no colours, fonts, spacing, animations or layout were redesigned. Four responsive bugs
+were fixed:
+
+1. **Mobile menu was cut off in landscape.** On a phone held sideways the menu was taller
+   than the screen, so "Contact" and the phone/Instagram strip at the bottom were
+   unreachable — and the menu could not be scrolled. It now scrolls when it does not fit.
+
+2. **The page scrolled behind an open menu/project popup on iPhone.** iOS Safari ignores
+   the usual way of freezing the page, and closing a popup dumped you back at the top of
+   the site. The page is now properly frozen and you return to exactly where you were.
+
+3. **The map label spilled outside the map on small phones.** "Bukhari Commercial · DHA
+   Phase 6" was clipped at the right edge on a 375px screen. It now wraps onto two lines
+   and stays inside the map.
+
+4. **Some buttons were too small to tap comfortably.** The project filters (All / Kitchen
+   / Bedroom …), the "Let's talk" button and the footer links were 37px tall; Apple's
+   minimum is 44px. Their tap areas are now 44px **on touch devices only** — the buttons
+   look exactly the same, they are just easier to hit. (Footer links sit a few pixels
+   further apart on phones and tablets as a result. Desktop is pixel-for-pixel unchanged.)
+
+Verified afterwards: zero horizontal scrolling, zero overlapping elements, zero broken
+images, zero console errors, and the custom cursor stays hidden on touch screens.

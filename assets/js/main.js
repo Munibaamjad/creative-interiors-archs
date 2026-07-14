@@ -72,8 +72,34 @@ TEAM.forEach(m=>{
 /* mobile menu */
 const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
 let lenis=null; // set later if gsap present
+
+/* ---- scroll lock ----------------------------------------------------------
+   body{overflow:hidden} is ignored by iOS Safari, so the page kept scrolling
+   behind an open menu/modal. position:fixed locks it properly; we remember the
+   offset and put the user back exactly where they were on unlock.
+   Reference-counted so a menu + modal open at once can't unlock each other. */
+let _lockY=0,_locks=0;
+function lockScroll(){
+  if(_locks++>0)return;
+  _lockY=window.scrollY||window.pageYOffset||0;
+  document.body.style.top=(-_lockY)+'px';
+  document.body.classList.add('no-scroll');
+}
+function unlockScroll(){
+  if(_locks===0)return;
+  if(--_locks>0)return;
+  document.body.classList.remove('no-scroll');
+  document.body.style.top='';
+  /* position:fixed collapses the document height, so the full height is only
+     back AFTER a reflow. Without this read, scrollTo() is clamped to 0 and the
+     page jumps to the top when a modal/menu closes. */
+  void document.body.offsetHeight;
+  if(lenis){lenis.resize();lenis.scrollTo(_lockY,{immediate:true,force:true});}
+  window.scrollTo(0,_lockY);
+}
+
 function toggleMenu(){document.body.classList.toggle('menu-open');const on=document.body.classList.contains('menu-open');
-  mm.setAttribute('aria-hidden',!on);document.body.classList.toggle('no-scroll',on);if(lenis){on?lenis.stop():lenis.start();}}
+  mm.setAttribute('aria-hidden',!on);on?lockScroll():unlockScroll();if(lenis){on?lenis.stop():lenis.start();}}
 function closeMenu(){if(document.body.classList.contains('menu-open'))toggleMenu();}
 burger.addEventListener('click',toggleMenu);
 
@@ -134,7 +160,7 @@ function openModal(html, opts={}){
   lastFocused=document.activeElement;
   modal.classList.add('on');
   modal.setAttribute('aria-hidden','false');
-  document.body.classList.add('no-scroll');
+  lockScroll();
   if(lenis)lenis.stop();
   mClose.focus({preventScroll:true});
 }
@@ -142,7 +168,7 @@ function closeModal(){
   if(!modal.classList.contains('on'))return;
   modal.classList.remove('on');
   modal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('no-scroll');
+  unlockScroll();
   if(lenis && !document.body.classList.contains('menu-open'))lenis.start();
   if(lastFocused && lastFocused.focus)lastFocused.focus({preventScroll:true});
 }
