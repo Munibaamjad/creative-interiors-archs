@@ -47,7 +47,13 @@ const TEAM = [
 
 const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
 const HAS_GSAP = (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined');
-const touch = matchMedia('(hover:none),(pointer:coarse)').matches;
+/* Some Android browsers wrongly report themselves as hover-capable, which makes
+   :hover styles stick after a tap (the services thumbnail got stuck over the
+   text). Trust the hardware, not the media query. */
+const touch = matchMedia('(hover:none),(pointer:coarse)').matches
+           || ('ontouchstart' in window)
+           || navigator.maxTouchPoints > 0;
+if(touch)document.documentElement.classList.add('is-touch');
 
 /* ============ ALWAYS-RUN CORE (no animation lib needed) ============ */
 

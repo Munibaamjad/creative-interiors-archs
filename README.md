@@ -242,3 +242,29 @@ were fixed:
 
 Verified afterwards: zero horizontal scrolling, zero overlapping elements, zero broken
 images, zero console errors, and the custom cursor stays hidden on touch screens.
+
+### Round 2 — fixes from real-phone testing
+
+Testing on an actual Android phone surfaced three more problems that emulators had hidden:
+
+5. **Phone dark mode made the site unreadable.** Android Chrome / Samsung Internet have an
+   "auto dark theme" that force-inverts any website. This site is a *light* design, so the
+   inversion turned the cream backgrounds dark and the dark text nearly black-on-black.
+   The site now tells the browser it is a light design (`color-scheme: only light`), so
+   phone dark mode leaves it alone. **Nothing about the design changed — it simply displays
+   its real colours again.**
+
+6. **The services thumbnail was stuck on top of the text.** That image is meant to appear
+   only when a *mouse* hovers over a service row. Some Android browsers wrongly claim they
+   support hovering, so tapping a row made the hover stick and parked the picture over the
+   words. Touch is now detected from the hardware, not from the browser's claim, and the
+   thumbnail is switched off entirely on phones and tablets.
+
+7. **Project titles were invisible on phones.** Same root cause, and more serious: the
+   project card captions ("Sage & Stone Kitchen", etc.) were also revealed only on hover —
+   so on a real iPhone they never appeared at all. On touch they are now shown by default,
+   exactly as a desktop visitor sees them on hover. The small arrow button on team cards
+   is shown for the same reason, and a tapped filter chip no longer stays looking selected.
+
+Desktop and laptop behaviour is unchanged — hovering still reveals the thumbnail and the
+captions exactly as before.
