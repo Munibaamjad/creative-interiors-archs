@@ -36,7 +36,17 @@ const PROJECTS = {
     gallery:["assets/images/prestige_1.jpg","assets/images/prestige_2.jpg","assets/images/prestige_3.jpg","assets/images/prestige_4.jpg","assets/images/prestige_5.jpg","assets/images/prestige_6.jpg","assets/images/prestige_7.jpg","assets/images/prestige_8.jpg","assets/images/prestige_9.png"],
     text:["A full basement entertainment level in DHA Phase 8, Karachi, built around a warm palette of walnut wood, brass and gold accents. A perforated ceiling cutout scatters dappled light across the lounge, while a bold arc floor lamp and a curved sectional sofa anchor the seating.",
       "A dramatic wood-and-gold jaali screen divides the marble dining table from an adjoining billiards room, and a matte-black TV wall in exposed white brick completes the entertaining suite. The gallery moves from the finished renders through to the material moodboard behind the scheme."],
-    facts:{Discipline:"Interior Design",Location:"Khayaban-e-Shujaat, DHA Phase 8, Karachi",Palette:"Walnut \u00b7 Marble \u00b7 Gold",Scope:"Living \u00b7 Dining \u00b7 Billiards"}}
+    facts:{Discipline:"Interior Design",Location:"Khayaban-e-Shujaat, DHA Phase 8, Karachi",Palette:"Walnut \u00b7 Marble \u00b7 Gold",Scope:"Living \u00b7 Dining \u00b7 Billiards"}},
+  office:{cat:"Residential \u00b7 Home Office",title:"Concrete & Walnut Study",img:"assets/images/office_2.jpg",
+    gallery:["assets/images/office_2.jpg","assets/images/office_3.jpg","assets/images/office_4.jpg","assets/images/office_5.jpg","assets/images/office_1.png"],
+    text:["A home office and lounge in Muhammad Ali Society, Karachi, grounded in raw concrete-textured walls, fluted walnut panelling and a rugged PU-stone feature. A tufted sage-and-mustard sofa and a round graphic rug soften the industrial base, while a sculptural copper wall piece and a woven pendant add warmth overhead.",
+      "Beyond the lounge, a crisp white desk sits against a chiselled stone wall and a gallery of framed prints, with a mirrored sliding door opening onto the bedroom beyond \u2014 a considered, work-from-home suite built for calm focus."],
+    facts:{Discipline:"Interior Design",Location:"Muhammad Ali Society, Karachi",Palette:"Concrete \u00b7 Walnut \u00b7 Stone",Scope:"Home Office \u00b7 Lounge"}},
+  shotcoffee:{cat:"Commercial \u00b7 Caf\u00e9",title:"Shot Coffee",img:"assets/images/shotcoffee_1.jpg",
+    gallery:["assets/images/shotcoffee_1.jpg","assets/images/shotcoffee_2.jpg","assets/images/shotcoffee_3.jpg","assets/images/shotcoffee_4.jpg","assets/images/shotcoffee_5.jpg","assets/images/shotcoffee_6.jpg","assets/images/shotcoffee_7.jpg","assets/images/shotcoffee_8.jpg","assets/images/shotcoffee_9.jpg"],
+    text:["A double-height caf\u00e9 fit-out for Shot Coffee on Tipu Sultan, Karachi, built around a playful mix of sage green, terracotta and warm concrete. A sculptural cloud-shaped pendant cluster floats above terrazzo tables, while a polished bakery counter and an illustrated mural wall greet visitors at the entrance.",
+      "Upstairs, a mezzanine lounge wraps a glazed balustrade with a gallery of hand-drawn coffee artwork, playful signage and a hanging planter grid, opening onto skyline views \u2014 a bright, characterful space designed to keep every corner Instagram-ready."],
+    facts:{Discipline:"Commercial Interior Design",Location:"Tipu Sultan, Karachi",Palette:"Sage \u00b7 Terracotta \u00b7 Concrete",Scope:"Caf\u00e9 \u00b7 Mezzanine Lounge"}}
 };
 const TEAM = [
   {id:"mubashir",pos:"50% 22%",posModal:"50% 36%",name:"Mubashir Rehman",role:"CEO / Founder",img:"assets/images/t_mubashir.jpg",

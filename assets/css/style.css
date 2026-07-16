@@ -232,7 +232,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .filters button{min-height:44px;display:inline-flex;align-items:center}
 }
 .filters button.active,.filters button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2vw,28px)}
+.proj-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-flow:dense;gap:clamp(16px,2vw,28px)}
 .pcard{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;background:var(--sand);
   transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .pcard.hide{display:none}
