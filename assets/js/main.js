@@ -3,6 +3,11 @@
    capsule stroke · marquee · counters · filters · modals · mobile menu */
 /* ================= DATA ================= */
 const PROJECTS = {
+  lyari:{cat:"Residential \u00b7 Kitchen",title:"Lyari Residence",img:"assets/images/lyari_1.jpg",
+    gallery:["assets/images/lyari_1.jpg","assets/images/lyari_2.jpg","assets/images/lyari_3.jpg","assets/images/lyari_4.jpg","assets/images/lyari_5.jpg","assets/images/lyari_6.jpg","assets/images/lyari_7.jpg","assets/images/lyari_8.jpg","assets/images/lyari_9.jpg"],
+    text:["A complete residential kitchen in Lyari, Karachi \u2014 taken from concept to completion. Matte-black cabinetry is warmed by mid-tone wood veneer, grounded by Calacatta marble surfaces and a bold black-and-white marble floor.",
+      "Layered lighting, glass-fronted display units and integrated appliances balance everyday function with a considered, elevated finish. The gallery below moves from the final photographs through the 3D kitchen renders to the material moodboard behind the scheme."],
+    facts:{Discipline:"Interior Design",Location:"Lyari, Karachi",Palette:"Matte Black \u00b7 Wood \u00b7 Marble",Scope:"Renders \u00b7 Moodboard \u00b7 Build"}},
   p1:{cat:"Kitchen \u00b7 Dining",title:"Sage & Stone Kitchen",img:"assets/images/proj1.jpg",
     text:["This open-concept kitchen and dining space blends warmth with sophistication through a rich palette of sage green cabinetry, dark marble surfaces and natural wood accents.",
       "A statement island in black stone anchors the room, paired with olive-toned bar stools and brass pendant lighting that adds a soft, ambient glow. Textured stone backsplash, integrated LED accent lighting and sleek dark-finish appliances complete the space \u2014 striking a balance between everyday functionality and elevated design."],
@@ -26,7 +31,12 @@ const PROJECTS = {
   p6:{cat:"Bedroom",title:"Fluted Green Bedroom",img:"assets/images/port3.jpg",
     text:["A serene bedroom built around a fluted feature wall and a low, olive-green upholstered bed. A slim marble inset and warm cove lighting bring depth without clutter.",
       "The result is a quiet, enveloping room where texture does the talking \u2014 exactly the kind of space designed for the people who live in it."],
-    facts:{Discipline:"Interior Design",Palette:"Olive \u00b7 Cream \u00b7 Marble",Space:"Bedroom",Focus:"Texture & calm"}}
+    facts:{Discipline:"Interior Design",Palette:"Olive \u00b7 Cream \u00b7 Marble",Space:"Bedroom",Focus:"Texture & calm"}},
+  prestige:{cat:"Residential \u00b7 Basement",title:"The Prestige Basement",img:"assets/images/prestige_1.jpg",
+    gallery:["assets/images/prestige_1.jpg","assets/images/prestige_2.jpg","assets/images/prestige_3.jpg","assets/images/prestige_4.jpg","assets/images/prestige_5.jpg","assets/images/prestige_6.jpg","assets/images/prestige_7.jpg","assets/images/prestige_8.jpg","assets/images/prestige_9.png"],
+    text:["A full basement entertainment level in DHA Phase 8, Karachi, built around a warm palette of walnut wood, brass and gold accents. A perforated ceiling cutout scatters dappled light across the lounge, while a bold arc floor lamp and a curved sectional sofa anchor the seating.",
+      "A dramatic wood-and-gold jaali screen divides the marble dining table from an adjoining billiards room, and a matte-black TV wall in exposed white brick completes the entertaining suite. The gallery moves from the finished renders through to the material moodboard behind the scheme."],
+    facts:{Discipline:"Interior Design",Location:"Khayaban-e-Shujaat, DHA Phase 8, Karachi",Palette:"Walnut \u00b7 Marble \u00b7 Gold",Scope:"Living \u00b7 Dining \u00b7 Billiards"}}
 };
 const TEAM = [
   {id:"mubashir",pos:"50% 22%",posModal:"50% 36%",name:"Mubashir Rehman",role:"CEO / Founder",img:"assets/images/t_mubashir.jpg",
@@ -47,13 +57,7 @@ const TEAM = [
 
 const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
 const HAS_GSAP = (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined');
-/* Some Android browsers wrongly report themselves as hover-capable, which makes
-   :hover styles stick after a tap (the services thumbnail got stuck over the
-   text). Trust the hardware, not the media query. */
-const touch = matchMedia('(hover:none),(pointer:coarse)').matches
-           || ('ontouchstart' in window)
-           || navigator.maxTouchPoints > 0;
-if(touch)document.documentElement.classList.add('is-touch');
+const touch = matchMedia('(hover:none),(pointer:coarse)').matches;
 
 /* ============ ALWAYS-RUN CORE (no animation lib needed) ============ */
 
@@ -78,34 +82,8 @@ TEAM.forEach(m=>{
 /* mobile menu */
 const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
 let lenis=null; // set later if gsap present
-
-/* ---- scroll lock ----------------------------------------------------------
-   body{overflow:hidden} is ignored by iOS Safari, so the page kept scrolling
-   behind an open menu/modal. position:fixed locks it properly; we remember the
-   offset and put the user back exactly where they were on unlock.
-   Reference-counted so a menu + modal open at once can't unlock each other. */
-let _lockY=0,_locks=0;
-function lockScroll(){
-  if(_locks++>0)return;
-  _lockY=window.scrollY||window.pageYOffset||0;
-  document.body.style.top=(-_lockY)+'px';
-  document.body.classList.add('no-scroll');
-}
-function unlockScroll(){
-  if(_locks===0)return;
-  if(--_locks>0)return;
-  document.body.classList.remove('no-scroll');
-  document.body.style.top='';
-  /* position:fixed collapses the document height, so the full height is only
-     back AFTER a reflow. Without this read, scrollTo() is clamped to 0 and the
-     page jumps to the top when a modal/menu closes. */
-  void document.body.offsetHeight;
-  if(lenis){lenis.resize();lenis.scrollTo(_lockY,{immediate:true,force:true});}
-  window.scrollTo(0,_lockY);
-}
-
 function toggleMenu(){document.body.classList.toggle('menu-open');const on=document.body.classList.contains('menu-open');
-  mm.setAttribute('aria-hidden',!on);on?lockScroll():unlockScroll();if(lenis){on?lenis.stop():lenis.start();}}
+  mm.setAttribute('aria-hidden',!on);document.body.classList.toggle('no-scroll',on);if(lenis){on?lenis.stop():lenis.start();}}
 function closeMenu(){if(document.body.classList.contains('menu-open'))toggleMenu();}
 burger.addEventListener('click',toggleMenu);
 
@@ -136,7 +114,14 @@ filters.addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   filters.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
   const f=b.dataset.filter;
-  document.querySelectorAll('.pcard').forEach(c=>c.classList.toggle('hide',!(f==='all'||c.dataset.cat===f)));
+  let shown=0;
+  document.querySelectorAll('.pcard').forEach(c=>{
+    const hide=!(f==='all'||c.dataset.cat===f);
+    c.classList.toggle('hide',hide);
+    if(!hide)shown++;
+  });
+  const empty=document.getElementById('projEmpty');
+  if(empty)empty.hidden=shown>0;
   if(HAS_GSAP)ScrollTrigger.refresh();
 });
 
@@ -166,7 +151,7 @@ function openModal(html, opts={}){
   lastFocused=document.activeElement;
   modal.classList.add('on');
   modal.setAttribute('aria-hidden','false');
-  lockScroll();
+  document.body.classList.add('no-scroll');
   if(lenis)lenis.stop();
   mClose.focus({preventScroll:true});
 }
@@ -174,7 +159,7 @@ function closeModal(){
   if(!modal.classList.contains('on'))return;
   modal.classList.remove('on');
   modal.setAttribute('aria-hidden','true');
-  unlockScroll();
+  document.body.classList.remove('no-scroll');
   if(lenis && !document.body.classList.contains('menu-open'))lenis.start();
   if(lastFocused && lastFocused.focus)lastFocused.focus({preventScroll:true});
 }
@@ -196,9 +181,20 @@ document.querySelectorAll('[data-modal]').forEach(c=>{
   c.addEventListener('click',()=>{
     const p=PROJECTS[c.dataset.modal];if(!p)return;
     const facts=Object.entries(p.facts).map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+    const gallery = (p.gallery && p.gallery.length)
+      ? `<div class="modal__gallery">${p.gallery.map((g,i)=>
+          `<button class="mgal" data-full="${g}" aria-label="View image ${i+1}"><img loading="lazy" decoding="async" src="${g}" alt="${p.title} — image ${i+1}"></button>`).join('')}</div>`
+      : '';
     openModal(`<div class="modal__cat">${p.cat}</div><h3 class="modal__title" id="mTitle">${p.title}</h3>
       <div class="modal__text">${p.text.map(t=>`<p>${t}</p>`).join('')}</div>
-      <dl class="modal__facts">${facts}</dl>`, {img:p.img, alt:p.title});
+      <dl class="modal__facts">${facts}</dl>${gallery}`, {img:p.img, alt:p.title});
+    // tapping a thumbnail swaps the big modal image
+    mBody.querySelectorAll('.mgal').forEach(btn=>btn.addEventListener('click',()=>{
+      mImg.src=btn.dataset.full;
+      mBody.querySelectorAll('.mgal').forEach(x=>x.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('mMedia').scrollIntoView({behavior:'smooth',block:'nearest'});
+    }));
   });
 });
 teamGrid.addEventListener('click',e=>{

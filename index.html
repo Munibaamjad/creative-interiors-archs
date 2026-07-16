@@ -6,9 +6,6 @@
 <title>Creative Interiors &amp; Archs — Interior &amp; Architectural Design Studio, Karachi</title>
 <meta name="description" content="Creative Interiors & Archs is an interior design studio in Karachi blending thoughtful materials, natural light and functional detail into spaces that serve the people who live in them." />
 <meta name="theme-color" content="#F6F2EC" />
-<!-- This is a light design. Without this, Android Chrome / Samsung Internet
-     "auto dark theme" force-inverts the page and the text becomes unreadable. -->
-<meta name="color-scheme" content="only light" />
 <meta property="og:title" content="Creative Interiors & Archs — Design Studio" />
 <meta property="og:description" content="We design spaces that feel as good as they look." />
 <meta property="og:type" content="website" />
@@ -209,37 +206,44 @@
       </div>
       <div class="filters fade-up" data-reveal id="filters">
         <button class="active" data-filter="all">All</button>
-        <button data-filter="kitchen">Kitchen</button>
-        <button data-filter="bedroom">Bedroom</button>
-        <button data-filter="bath">Bath</button>
-        <button data-filter="living">Living</button>
+        <button data-filter="commercial">Commercial</button>
+        <button data-filter="residential">Residential</button>
       </div>
     </div>
 
     <div class="proj-grid" id="projGrid">
-      <article class="pcard big" data-cat="kitchen" data-modal="p1">
+      <p class="proj-empty" id="projEmpty" hidden>No commercial projects to show just yet — our commercial work is coming soon.</p>
+      <article class="pcard big" data-cat="residential" data-modal="lyari">
+        <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/lyari_1.jpg" alt="Lyari residential kitchen — matte black and warm wood"></div>
+        <div class="pcard__meta"><div class="pcard__cat">Residential · Kitchen</div><div class="pcard__name">Lyari Residence</div></div>
+      </article>
+      <article class="pcard big" data-cat="residential" data-modal="p1">
         <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/proj1.jpg" alt="Open-concept kitchen in sage green with black stone island"></div>
         <div class="pcard__meta"><div class="pcard__cat">Kitchen · Dining</div><div class="pcard__name">Sage &amp; Stone Kitchen</div></div>
       </article>
-      <article class="pcard tall" data-cat="bath" data-modal="p4">
+      <article class="pcard tall" data-cat="residential" data-modal="p4">
         <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/proj2b.jpg" alt="Dark stone bathroom with backlit round mirror"></div>
         <div class="pcard__meta"><div class="pcard__cat">Bathroom</div><div class="pcard__name">Ember Stone Bath</div></div>
       </article>
-      <article class="pcard wide" data-cat="kitchen" data-modal="p2">
+      <article class="pcard wide" data-cat="residential" data-modal="p2">
         <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/proj2.jpg" alt="Warm glam kitchen and marble dining space"></div>
         <div class="pcard__meta"><div class="pcard__cat">Kitchen · Dining</div><div class="pcard__name">Beige Glam Kitchen</div></div>
       </article>
-      <article class="pcard sq" data-cat="bedroom" data-modal="p3">
+      <article class="pcard sq" data-cat="residential" data-modal="p3">
         <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/port2.jpg" alt="Bedroom with arched backlit mirror"></div>
         <div class="pcard__meta"><div class="pcard__cat">Bedroom</div><div class="pcard__name">Arched Mirror Suite</div></div>
       </article>
-      <article class="pcard med" data-cat="living" data-modal="p5">
+      <article class="pcard med" data-cat="residential" data-modal="p5">
         <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/port1.jpg" alt="Living room with gold arch and sage seating"></div>
         <div class="pcard__meta"><div class="pcard__cat">Living</div><div class="pcard__name">Golden Arch Living</div></div>
       </article>
-      <article class="pcard med" data-cat="bedroom" data-modal="p6">
+      <article class="pcard med" data-cat="residential" data-modal="p6">
         <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/port3.jpg" alt="Green upholstered bed with fluted walls"></div>
         <div class="pcard__meta"><div class="pcard__cat">Bedroom</div><div class="pcard__name">Fluted Green Bedroom</div></div>
+      </article>
+      <article class="pcard big" data-cat="residential" data-modal="prestige">
+        <div class="pcard__img"><img loading="lazy" decoding="async" src="assets/images/prestige_1.jpg" alt="The Prestige Basement — walnut and gold living lounge with perforated ceiling"></div>
+        <div class="pcard__meta"><div class="pcard__cat">Residential · Basement</div><div class="pcard__name">The Prestige Basement</div></div>
       </article>
     </div>
   </div>
