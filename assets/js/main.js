@@ -3,6 +3,14 @@
    capsule stroke · marquee · counters · filters · modals · mobile menu */
 /* ================= DATA ================= */
 const PROJECTS = {
+  windsor:{cat:"Residential · Multi-Floor",title:"48 Windsor Road",img:"assets/images/windsor-first/windsor-first-05.jpg",
+    floors:{
+      ground:{label:"Ground Floor",gallery:["assets/images/windsor-ground/windsor-ground-01.jpg","assets/images/windsor-ground/windsor-ground-02.jpg","assets/images/windsor-ground/windsor-ground-03.jpg","assets/images/windsor-ground/windsor-ground-04.jpg","assets/images/windsor-ground/windsor-ground-05.jpg","assets/images/windsor-ground/windsor-ground-06.jpg","assets/images/windsor-ground/windsor-ground-07.jpg","assets/images/windsor-ground/windsor-ground-08.jpg","assets/images/windsor-ground/windsor-ground-09.jpg","assets/images/windsor-ground/windsor-ground-10.jpg","assets/images/windsor-ground/windsor-ground-11.jpg","assets/images/windsor-ground/windsor-ground-12.jpg","assets/images/windsor-ground/windsor-ground-13.jpg","assets/images/windsor-ground/windsor-ground-14.jpg","assets/images/windsor-ground/windsor-ground-15.jpg","assets/images/windsor-ground/windsor-ground-16.jpg","assets/images/windsor-ground/windsor-ground-17.jpg","assets/images/windsor-ground/windsor-ground-18.jpg","assets/images/windsor-ground/windsor-ground-19.jpg","assets/images/windsor-ground/windsor-ground-20.jpg","assets/images/windsor-ground/windsor-ground-21.jpg","assets/images/windsor-ground/windsor-ground-22.jpg","assets/images/windsor-ground/windsor-ground-23.jpg","assets/images/windsor-ground/windsor-ground-24.jpg","assets/images/windsor-ground/windsor-ground-25.jpg","assets/images/windsor-ground/windsor-ground-26.jpg","assets/images/windsor-ground/windsor-ground-27.jpg","assets/images/windsor-ground/windsor-ground-28.jpg","assets/images/windsor-ground/windsor-ground-29.jpg","assets/images/windsor-ground/windsor-ground-30.jpg","assets/images/windsor-ground/windsor-ground-31.jpg","assets/images/windsor-ground/windsor-ground-32.jpg","assets/images/windsor-ground/windsor-ground-33.jpg","assets/images/windsor-ground/windsor-ground-34.jpg","assets/images/windsor-ground/windsor-ground-35.jpg","assets/images/windsor-ground/windsor-ground-36.jpg","assets/images/windsor-ground/windsor-ground-37.jpg","assets/images/windsor-ground/windsor-ground-38.jpg","assets/images/windsor-ground/windsor-ground-39.jpg","assets/images/windsor-ground/windsor-ground-40.jpg","assets/images/windsor-ground/windsor-ground-41.jpg","assets/images/windsor-ground/windsor-ground-42.jpg","assets/images/windsor-ground/windsor-ground-43.jpg","assets/images/windsor-ground/windsor-ground-44.jpg","assets/images/windsor-ground/windsor-ground-45.jpg","assets/images/windsor-ground/windsor-ground-46.jpg","assets/images/windsor-ground/windsor-ground-47.jpg","assets/images/windsor-ground/windsor-ground-48.jpg","assets/images/windsor-ground/windsor-ground-49.jpg","assets/images/windsor-ground/windsor-ground-50.jpg","assets/images/windsor-ground/windsor-ground-51.jpg","assets/images/windsor-ground/windsor-ground-52.jpg","assets/images/windsor-ground/windsor-ground-53.jpg","assets/images/windsor-ground/windsor-ground-54.jpg","assets/images/windsor-ground/windsor-ground-55.jpg","assets/images/windsor-ground/windsor-ground-56.jpg","assets/images/windsor-ground/windsor-ground-57.jpg","assets/images/windsor-ground/windsor-ground-58.jpg","assets/images/windsor-ground/windsor-ground-59.jpg","assets/images/windsor-ground/windsor-ground-60.jpg","assets/images/windsor-ground/windsor-ground-61.jpg","assets/images/windsor-ground/windsor-ground-62.jpg","assets/images/windsor-ground/windsor-ground-63.jpg","assets/images/windsor-ground/windsor-ground-64.jpg","assets/images/windsor-ground/windsor-ground-65.jpg","assets/images/windsor-ground/windsor-ground-66.jpg","assets/images/windsor-ground/windsor-ground-67.jpg","assets/images/windsor-ground/windsor-ground-68.jpg","assets/images/windsor-ground/windsor-ground-69.jpg","assets/images/windsor-ground/windsor-ground-70.jpg","assets/images/windsor-ground/windsor-ground-71.jpg"]},
+      first:{label:"First Floor",gallery:["assets/images/windsor-first/windsor-first-01.jpg","assets/images/windsor-first/windsor-first-02.jpg","assets/images/windsor-first/windsor-first-03.jpg","assets/images/windsor-first/windsor-first-04.jpg","assets/images/windsor-first/windsor-first-05.jpg","assets/images/windsor-first/windsor-first-06.jpg","assets/images/windsor-first/windsor-first-07.jpg","assets/images/windsor-first/windsor-first-08.jpg","assets/images/windsor-first/windsor-first-09.jpg","assets/images/windsor-first/windsor-first-10.jpg","assets/images/windsor-first/windsor-first-11.jpg","assets/images/windsor-first/windsor-first-12.jpg","assets/images/windsor-first/windsor-first-13.jpg","assets/images/windsor-first/windsor-first-14.jpg","assets/images/windsor-first/windsor-first-15.jpg","assets/images/windsor-first/windsor-first-16.jpg","assets/images/windsor-first/windsor-first-17.jpg","assets/images/windsor-first/windsor-first-18.jpg","assets/images/windsor-first/windsor-first-19.jpg","assets/images/windsor-first/windsor-first-20.jpg","assets/images/windsor-first/windsor-first-21.jpg","assets/images/windsor-first/windsor-first-22.jpg","assets/images/windsor-first/windsor-first-23.jpg","assets/images/windsor-first/windsor-first-24.jpg","assets/images/windsor-first/windsor-first-25.jpg","assets/images/windsor-first/windsor-first-26.jpg","assets/images/windsor-first/windsor-first-27.jpg","assets/images/windsor-first/windsor-first-28.jpg","assets/images/windsor-first/windsor-first-29.jpg","assets/images/windsor-first/windsor-first-30.jpg","assets/images/windsor-first/windsor-first-31.jpg","assets/images/windsor-first/windsor-first-32.jpg","assets/images/windsor-first/windsor-first-33.jpg","assets/images/windsor-first/windsor-first-34.jpg","assets/images/windsor-first/windsor-first-35.jpg","assets/images/windsor-first/windsor-first-36.jpg","assets/images/windsor-first/windsor-first-37.jpg","assets/images/windsor-first/windsor-first-38.jpg","assets/images/windsor-first/windsor-first-39.jpg","assets/images/windsor-first/windsor-first-40.jpg","assets/images/windsor-first/windsor-first-41.jpg","assets/images/windsor-first/windsor-first-42.jpg","assets/images/windsor-first/windsor-first-43.jpg","assets/images/windsor-first/windsor-first-44.jpg","assets/images/windsor-first/windsor-first-45.jpg","assets/images/windsor-first/windsor-first-46.jpg","assets/images/windsor-first/windsor-first-47.jpg","assets/images/windsor-first/windsor-first-48.jpg","assets/images/windsor-first/windsor-first-49.jpg","assets/images/windsor-first/windsor-first-50.jpg","assets/images/windsor-first/windsor-first-51.jpg","assets/images/windsor-first/windsor-first-52.jpg"]}
+    },
+    text:["A complete multi-floor residential renovation at 48 Windsor Road, spanning Ground and First floors. The First Floor brings together a terrazzo-and-blush primary bathroom, a warm terracotta-panelled master suite, a walk-in dressing room in smoked glass and walnut, and a calm grey gaming\/study bedroom.",
+      "Each space is tied together by a considered material palette — fluted timber, brushed brass, and warm cove lighting — with the floor selector below letting you browse Ground and First floor renders separately."],
+    facts:{Discipline:"Interior Design",Location:"48 Windsor Road",Palette:"Terracotta · Walnut · Terrazzo",Scope:"Ground Floor · First Floor"}},
   lyari:{cat:"Residential \u00b7 Kitchen",title:"Lyari Residence",img:"assets/images/lyari_1.jpg",
     gallery:["assets/images/lyari_1.jpg","assets/images/lyari_2.jpg","assets/images/lyari_3.jpg","assets/images/lyari_4.jpg","assets/images/lyari_5.jpg","assets/images/lyari_6.jpg","assets/images/lyari_7.jpg","assets/images/lyari_8.jpg","assets/images/lyari_9.jpg"],
     text:["A complete residential kitchen in Lyari, Karachi \u2014 taken from concept to completion. Matte-black cabinetry is warmed by mid-tone wood veneer, grounded by Calacatta marble surfaces and a bold black-and-white marble floor.",
@@ -191,6 +199,47 @@ document.querySelectorAll('[data-modal]').forEach(c=>{
   c.addEventListener('click',()=>{
     const p=PROJECTS[c.dataset.modal];if(!p)return;
     const facts=Object.entries(p.facts).map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+
+    /* multi-floor projects (e.g. 48 Windsor Road) get a floor switcher above their
+       gallery instead of a single flat gallery. This branch is self-contained and
+       returns early, so it never touches the original single-gallery flow below. */
+    if(p.floors){
+      const floorKeys=Object.keys(p.floors);
+      const buildFloorGallery = (imgs) => (imgs && imgs.length)
+        ? `<div class="modal__gallery">${imgs.map((g,i)=>
+            `<button class="mgal" data-full="${g}" aria-label="View image ${i+1}"><img loading="lazy" decoding="async" src="${g}" alt="${p.title} — image ${i+1}"></button>`).join('')}</div>`
+        : '';
+      const wireFloorGalleryClicks = () => {
+        mBody.querySelectorAll('.mgal').forEach(btn=>btn.addEventListener('click',()=>{
+          mImg.src=btn.dataset.full;
+          mBody.querySelectorAll('.mgal').forEach(x=>x.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById('mMedia').scrollIntoView({behavior:'smooth',block:'nearest'});
+        }));
+      };
+      const startFloor = floorKeys.find(k=>p.floors[k].gallery && p.floors[k].gallery.length) || floorKeys[0];
+      const tabsHtml = `<div class="floor-tabs" role="tablist">${floorKeys.map(k=>
+        `<button class="floor-tab${k===startFloor?' active':''}" data-floor="${k}" role="tab" aria-selected="${k===startFloor}">${p.floors[k].label}</button>`).join('')}</div>`;
+      const startGallery = buildFloorGallery(p.floors[startFloor].gallery) ||
+        `<p class="floor-empty">${p.floors[startFloor].label} renders are coming soon.</p>`;
+
+      openModal(`<div class="modal__cat">${p.cat}</div><h3 class="modal__title" id="mTitle">${p.title}</h3>
+        <div class="modal__text">${p.text.map(t=>`<p>${t}</p>`).join('')}</div>
+        <dl class="modal__facts">${facts}</dl>${tabsHtml}<div id="floorGalleryWrap">${startGallery}</div>`, {img:p.img, alt:p.title});
+      wireFloorGalleryClicks();
+
+      mBody.querySelectorAll('.floor-tab').forEach(tab=>tab.addEventListener('click',()=>{
+        mBody.querySelectorAll('.floor-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');});
+        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+        const floor=p.floors[tab.dataset.floor];
+        const wrap=document.getElementById('floorGalleryWrap');
+        wrap.innerHTML = buildFloorGallery(floor.gallery) || `<p class="floor-empty">${floor.label} renders are coming soon.</p>`;
+        if(floor.gallery && floor.gallery.length) mImg.src=floor.gallery[0];
+        wireFloorGalleryClicks();
+      }));
+      return;
+    }
+
     const gallery = (p.gallery && p.gallery.length)
       ? `<div class="modal__gallery">${p.gallery.map((g,i)=>
           `<button class="mgal" data-full="${g}" aria-label="View image ${i+1}"><img loading="lazy" decoding="async" src="${g}" alt="${p.title} — image ${i+1}"></button>`).join('')}</div>`
