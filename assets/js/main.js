@@ -1,6 +1,11 @@
 /* Creative Interiors & Archs — site behaviour
    loader · custom cursor · smooth scroll · scroll reveals · parallax
    capsule stroke · marquee · counters · filters · modals · mobile menu */
+/* touch detection — media queries alone are unreliable on Android, so use hardware signals */
+(function(){
+  var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+  if(isTouch) document.documentElement.classList.add('is-touch');
+})();
 /* ================= DATA ================= */
 const PROJECTS = {
   windsor:{cat:"Residential · Multi-Floor",title:"48 Windsor Road",img:"assets/images/windsor-first/windsor-first-05.jpg",
