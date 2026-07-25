@@ -220,6 +220,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .srow__thumb img{width:100%;height:100%;object-fit:cover}
 @media(hover:hover){.srow:hover .srow__thumb{opacity:1;transform:translateY(-50%) scale(1)}
   .srow:hover .srow__title{color:var(--mocha);transform:translateX(14px)}}
+html.is-touch .srow__thumb{display:none}
 
 /* ---------- PROJECTS ---------- */
 .projects__head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:30px;margin-bottom:44px}
