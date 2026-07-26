@@ -62,13 +62,13 @@ const PROJECTS = {
     facts:{Discipline:"Commercial Interior Design",Location:"Tipu Sultan, Karachi",Palette:"Sage \u00b7 Terracotta \u00b7 Concrete",Scope:"Caf\u00e9 \u00b7 Mezzanine Lounge"}}
 };
 const TEAM = [
-  {id:"mubashir",pos:"50% 22%",posModal:"50% 36%",name:"Mubashir Rehman",role:"CEO / Founder",img:"assets/images/t_mubashir.jpg",
+  {id:"mubashir",pos:"50% 22%",posModal:"50% 36%",name:"Mubashir Rehman Hingoro",role:"CEO / Founder",img:"assets/images/t_mubashir.jpg",
    bio:"As the Founder and Interior Designer, he leads every project with a passion for thoughtful design and a commitment to excellence. With expertise in interior design, space planning, and 3D visualization, he transforms ideas into functional, elegant, and timeless spaces. His client-focused approach, attention to detail, and dedication to quality ensure that every project reflects creativity, innovation, and lasting value."},
   {id:"ali",pos:"50% 22%",posModal:"50% 36%",name:"Ali Muhammad Hingoro",role:"Project Manager",img:"assets/images/t_ali.jpg",
    bio:"Ensures every project is delivered with precision, efficiency, and professionalism. From planning and coordination to execution and quality control, he oversees every stage of the process, ensuring seamless communication, timely delivery, and exceptional results while maintaining the highest standards of quality."},
   {id:"areeba",pos:"50% 22%",posModal:"50% 36%",name:"Areeba Ali",role:"Interior Designer",img:"assets/images/t_areeba.jpg",
    bio:"Specializes in creating refined, functional, and timeless interiors tailored to each client's vision. By combining innovative design, technical expertise, and meticulous attention to detail, she delivers spaces that balance aesthetics, comfort, and practicality with exceptional quality."},
-  {id:"iqbal",pos:"50% 22%",posModal:"50% 36%",name:"Muhammad Iqbal",role:"Contractor",img:"assets/images/t_iqbal.jpg",
+  {id:"iqbal",pos:"50% 22%",posModal:"50% 36%",name:"Muhammad Iqbal Hingoro",role:"Contractor",img:"assets/images/t_iqbal.jpg",
    bio:"As the Founder of Hingora Constructions & Developers, he brings extensive expertise in construction management, project execution, and quality craftsmanship. With a strong commitment to excellence, he oversees every phase of construction to ensure projects are completed efficiently, safely, and to the highest standards. His dedication to quality, reliability, and client satisfaction plays a vital role in turning design concepts into successful built environments."},
   {id:"muzammil",pos:"50% 22%",posModal:"50% 36%",name:"Muzammil",role:"Contractor / Supervisor",img:"assets/images/t_muzammil.jpg",
    bio:"Specializes in delivering premium painting, decorative wall textures, surface finishes, and wood polish solutions. With extensive on-site expertise and a commitment to quality craftsmanship, he ensures every detail is executed to the highest standards, providing durable, elegant, and flawless finishes that enhance the beauty and value of every project."},
